@@ -2,9 +2,13 @@
 if [ ${EUID:-${UID}} = 0  ];then
 	#GIT
 	apt update
+	apt upgrade -y
 	apt install -y git
 	# Virtual Box guest addition tools
 	apt install -y vim gcc make perl python3-pip
+	
+	# Available Japanese
+	mozc-utils-gui fcitx-config-gtk
 	
 	# vscode: https://code.visualstudio.com/docs/setup/linux
 	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
