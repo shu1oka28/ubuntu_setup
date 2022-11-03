@@ -15,6 +15,6 @@ if [ ${EUID:-${UID}} = 0  ];then
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     apt-get update
     apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    curl -L https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-`uname -m` -o /usr/local/bin/docker-compose
-    chmod +x /usr/local/bin/docker-compose
+    apt install python3-pip
+    pip3 install docker-compose
 fi
